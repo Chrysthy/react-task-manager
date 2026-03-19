@@ -1,5 +1,21 @@
 @import "tailwindcss";
 
+@font-face {
+    font-family: "Josefin Sans";
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+    src: url("/public/fonts/JosefinSans-Regular.ttf") format(truetype);
+}
+
+@font-face {
+    font-family: "Josefin Sans";
+    font-style: normal;
+    font-weight: 700;
+    font-display: swap;
+    src: url("/public/fonts/JosefinSans-Bold.ttf") format(truetype);
+}
+
 @theme {
     --color-blue: hsl(220, 98%, 61%);
 
@@ -27,4 +43,7 @@
     --color-dark-border: hsl(237, 14%, 26%);
     --color-dark-secondary: hsl(236, 9%, 61%);
 
+
+    --font-primary: "Josefin Sans", sans-serif;
 }
+
