@@ -1,1 +1,30 @@
 @import "tailwindcss";
+
+@theme {
+    --color-blue: hsl(220, 98%, 61%);
+
+
+    /* Gradient */
+    --gradient-check: linear-gradient(hsl(192, 100%, 67%),
+            hsl(280, 87%, 65%));
+
+
+    /* LIGHT THEME */
+    --color-light-bg: hsl(0, 0%, 98%);
+    --color-light-primary: hsl(234, 39%, 85%);
+    --color-light-border: hsl(233, 11%, 84%);
+    --color-light-text-muted: hsl(236, 9%, 61%);
+    --color-light-text: hsl(235, 19%, 35%);
+
+
+    /* DARK THEME */
+    --color-dark-bg: hsl(235, 21%, 11%);
+    --color-dark-surface: hsl(235, 24%, 19%);
+    --color-dark-primary: hsl(234, 39%, 85%);
+    --color-dark-hover: hsl(236, 33%, 92%);
+    --color-dark-text-muted: hsl(235, 16%, 43%);
+    --color-dark-text: hsl(233, 14%, 35%);
+    --color-dark-border: hsl(237, 14%, 26%);
+    --color-dark-secondary: hsl(236, 9%, 61%);
+
+}
