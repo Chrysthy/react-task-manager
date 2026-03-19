@@ -47,3 +47,6 @@
     --font-primary: "Josefin Sans", sans-serif;
 }
 
+body {
+    font-family: var(--font-primary);
+}
