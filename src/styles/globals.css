@@ -10,7 +10,7 @@
 
 @font-face {
     font-family: "Josefin Sans";
-    font-style: normal;
+    font-style: bold;
     font-weight: 700;
     font-display: swap;
     src: url("/public/fonts/JosefinSans-Bold.ttf") format(truetype);
