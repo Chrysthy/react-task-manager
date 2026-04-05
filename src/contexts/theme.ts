@@ -6,28 +6,28 @@ export const themeConfig = {
     light: {
         name: 'light',
         layout: {
-            background: 'bg-color-light-bg',
+            background: 'bg-light-bg',
             textColor: 'text-color-dark-text',
         },
         todo: {
-            background: 'bg-color-light-todo-bg',
-            border: 'border-color-light-border',
-            textColor: 'text-color-light-todo-text',
+            background: 'bg-light-bg',
+            border: 'border-light-border',
+            textColor: 'text-light-text',
         },
-        icon: IconSun,
+        icon: MoonIcon,
     },
 
     dark: {
         name: 'dark',
         layout: {
-            background: 'bg-color-light-bg',
+            background: 'bg-dark-bg',
             textColor: 'text-color-dark-text',
         },
         todo: {
-            background: 'bg-color-dark-todo-bg',
-            border: 'border-color-light-border',
-            textColor: 'text-color-light-todo-text',
+            background: 'bg-dark-surface',
+            border: 'border-dark-border',
+            textColor: 'text-dark-hover',
         },
-        icon: MoonIcon,
+        icon: IconSun,
     }
 }
