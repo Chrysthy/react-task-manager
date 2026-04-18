@@ -1,3 +1,7 @@
+import { useContext } from "react";
+import { themeConfig } from '../../contexts/theme';
+import { ThemeContext } from '../../contexts/ThemeContext';
+
 const todos = [
     { id: 1, text: 'Todo 1' },
     { id: 2, text: 'Todo 2' },
@@ -5,19 +9,23 @@ const todos = [
 ]
 
 const TodoList = () => {
+
+    const { theme } = useContext(ThemeContext);
+    const config = themeConfig[theme].todo;
+
     return (
 
-        <div className="bg-dark-surface rounded-md">
+        <div className={`${config.background} rounded-md`}>
             <ul>
                 {todos.map((todo) => (
 
-                    <li className="p-6 border-b border-dark-border" key={todo.id}>
+                    <li className={`${config.border} p-6`} key={todo.id}>
 
                         <div className="flex item-center gap-4">
 
-                            <button className="w-6 h-6 border border-dark-border rounded-full cursor-pointer"></button>
+                            <button className={`${config.textColor} w-6 h-6 border border-dark-text rounded-full cursor-pointer`}></button>
 
-                            <p className="text-light-bg">{todo.text}</p>
+                            <p className={`${config.textColor}`}>{todo.text}</p>
 
                         </div>
 
@@ -26,21 +34,21 @@ const TodoList = () => {
 
             </ul>
 
-            <div className="flex justify-between p-4">
+            <div className={`flex items-center justify-between p-6 ${config.textColor} rounded-b-md`}>
 
                 <p>{todos.length} items left</p>
 
                 <div className="flex gap-4">
 
-                    <button>All</button>
+                    <button className={`${config.textColor} text-text-brighr-blue`}>All</button>
 
-                    <button>Active</button>
+                    <button className={`${config.textColor}`}>Active</button>
 
-                    <button>Completed</button>
+                    <button className={`${config.textColor}`}>Completed</button>
 
                 </div>
 
-                <button>Clear Selected</button>
+                <button className={`${config.textColor}`}>Clear Selected</button>
 
             </div>
 
