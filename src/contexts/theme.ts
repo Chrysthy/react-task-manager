@@ -16,17 +16,17 @@ export const themeConfig = {
         },
         icon: MoonIcon,
     },
-
+    
     dark: {
         name: 'dark',
         layout: {
             background: 'bg-dark-bg',
-            textColor: 'text-color-dark-text',
+            textColor: 'text-dark-text',
         },
         todo: {
             background: 'bg-dark-surface',
             border: 'border-dark-border',
-            textColor: 'text-dark-hover',
+            textColor: 'text-dark-primary',
         },
         icon: IconSun,
     }
