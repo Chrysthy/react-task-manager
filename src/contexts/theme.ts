@@ -6,6 +6,7 @@ export const themeConfig = {
     light: {
         name: 'light',
         layout: {
+            heroClass: 'theme-light',
             background: 'bg-light-bg',
             textColor: 'text-color-dark-text',
         },
@@ -16,10 +17,11 @@ export const themeConfig = {
         },
         icon: MoonIcon,
     },
-    
+
     dark: {
         name: 'dark',
         layout: {
+            heroClass: 'theme-dark',
             background: 'bg-dark-bg',
             textColor: 'text-dark-text',
         },
