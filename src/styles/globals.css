@@ -18,7 +18,8 @@
 
 @theme {
     --color-blue: hsl(220, 98%, 61%);
-    --color-teste: #ff0000; /* Vermelho puro */
+    --color-teste: #ff0000;
+    /* Vermelho puro */
 
 
     /* Gradient */
@@ -50,4 +51,14 @@
 
 body {
     font-family: var(--font-primary);
+}
+
+@layer base {
+    .theme-light {
+        @apply bg-[url('/bg-desktop-light.jpg')] bg-cover bg-center h-80;
+    }
+
+    .theme-dark {
+        @apply bg-[url('/bg-desktop-dark.jpg')] bg-cover bg-center h-80;
+    }
 }
