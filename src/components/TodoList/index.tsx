@@ -1,14 +1,13 @@
 import { useContext } from "react";
 import { themeConfig } from '../../contexts/theme';
 import { ThemeContext } from '../../contexts/ThemeContext';
+import type { Todo } from '../../App';
 
-const todos = [
-    { id: 1, text: 'Todo 1' },
-    { id: 2, text: 'Todo 2' },
-    { id: 3, text: 'Todo 3' }
-]
+export interface TodoListProps {
+    todoList: Todo[];
+}
 
-const TodoList = () => {
+const TodoList = ({ todoList }: TodoListProps) => {
     const { theme } = useContext(ThemeContext);
     const config = themeConfig[theme].todo;
 
@@ -16,7 +15,7 @@ const TodoList = () => {
         <>
             <div className={`${config.background} border ${config.border} rounded-md`}>
                 <ul>
-                    {todos.map((todo) => (
+                    {todoList.map((todo) => (
 
                         <li className={`border-b ${config.border} p-6`} key={todo.id}>
 
@@ -35,7 +34,7 @@ const TodoList = () => {
                 </ul>
 
                 <div className={`text-sm flex items-center justify-between p-6 ${config.textColor} rounded-b-md`}>
-                    <p>{todos.length} items left</p>
+                    <p>{todoList.length} items left</p>
 
                     <div className="hidden sm:flex gap-4">
 
