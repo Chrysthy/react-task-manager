@@ -12,7 +12,7 @@ export const themeConfig = {
         },
         todo: {
             background: 'bg-light-bg',
-            border: 'border-light-border',
+            border: 'border-light-primary',
             textColor: 'text-light-text',
         },
         icon: MoonIcon,
