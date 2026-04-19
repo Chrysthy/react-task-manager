@@ -1,37 +1,21 @@
 import TodoHeader from "./components/TodoHeader";
 import TodoForm from "./components/TodoForm";
 import TodoList from "./components/TodoList";
-import { themeConfig } from './contexts/theme';
-import { ThemeContext } from './contexts/ThemeContext';
-import { useContext } from "react";
-
+import { TodoContainer } from "./components/TodoContainer";
 
 function App() {
 
-  const { theme } = useContext(ThemeContext);
-  const config = themeConfig[theme];
-
   return (
-    <>
-      <main className={`h-screen ${config.layout.background}`}>
+      
+    <TodoContainer>
 
-        <div className={`${config.layout.heroClass}`}>
+      <TodoHeader />
 
-          <div className="max-w-175 w-full m-auto p-8">
+      <TodoForm />
 
-            <TodoHeader />
+      <TodoList />
 
-            <TodoForm />
-
-            <TodoList />
-
-          </div>
-
-        </div>
-
-      </main>
-
-    </>
+    </TodoContainer>
   )
 }
 
