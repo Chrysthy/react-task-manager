@@ -17,9 +17,17 @@ const TodoList = () => {
             <div className={`${config.background} border ${config.border} rounded-md`}>
                 <ul>
                     {todos.map((todo) => (
+
                         <li className={`border-b ${config.border} p-6`} key={todo.id}>
+
                             <div className="flex items-center gap-4">
-                                <button className={`w-6 h-6 border ${config.border} rounded-full cursor-pointer`}></button>
+
+                                <span className="w-6 h-6 rounded-full hover:bg-[linear-gradient(to_right,hsl(192,100%,67%),hsl(280,87%,65%))]">
+
+                                    <button className={`w-full h-full border ${config.border} rounded-full cursor-pointer ${config.background}`}></button>
+
+                                </span>
+
                                 <p className={config.textColor}>{todo.text}</p>
                             </div>
                         </li>
