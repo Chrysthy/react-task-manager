@@ -13,9 +13,13 @@ const TodoList = ({ todoList, toggleTodoCompleted }: TodoListProps) => {
     const { theme } = useContext(ThemeContext);
     const config = themeConfig[theme].todo;
 
+    if (todoList.length === 0) return null;
+
     return (
         <>
-            <div className={`${config.background} rounded-md`}>
+
+            <div className={`${config.background} border ${config.border} rounded-md`}>
+
                 <ul>
                     {todoList.map((todo) => (
 
@@ -25,7 +29,7 @@ const TodoList = ({ todoList, toggleTodoCompleted }: TodoListProps) => {
 
                                 <span className="w-6 h-6 rounded-full hover:bg-[linear-gradient(to_right,hsl(192,100%,67%),hsl(280,87%,65%))] hover:p-[1px]">
 
-                                    <button onClick={() => toggleTodoCompleted(todo.id)} className={`w-full h-full border ${config.border} rounded-full cursor-pointer ${config.background}`}>
+                                    <button onClick={() => toggleTodoCompleted(todo.id)} className={`w-full h-full border ${config.border} rounded-full cursor-pointer ${config.background} ${todo.completed ? "bg-[linear-gradient(to_right,hsl(192,100%,67%),hsl(280,87%,65%))]" : ""}`}>
 
                                         {todo.completed && (
 
