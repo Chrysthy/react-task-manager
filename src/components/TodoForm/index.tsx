@@ -1,14 +1,18 @@
-import { useContext } from "react";
+import { useContext, type FormEvent } from "react";
 import { themeConfig } from '../../contexts/theme';
 import { ThemeContext } from '../../contexts/ThemeContext';
 
-const TodoForm = () => {
+interface TodoInputProps {
+    addTodo: (event: FormEvent<HTMLFormElement>) => void;
+}
+
+const TodoForm = ({ addTodo }: TodoInputProps) => {
 
     const { theme } = useContext(ThemeContext);
     const config = themeConfig[theme].todo;
 
     return (
-        <form className="relative mb-10 w-full block">
+        <form className="relative mb-10 w-full block" onSubmit={addTodo}>
 
             <span className={`absolute w-6 h-6 border ${config.border} top-1/2 transform -translate-y-1/2 rounded-full left-6`}></span>
 
