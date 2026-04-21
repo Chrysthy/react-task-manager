@@ -13,7 +13,7 @@ export interface Todo {
 function App() {
 
   const [todoList, setTodoList] = useState<Todo[]>([]);
-  const [filter, setFilter] = useState < "all" | "active" | "completed">("all")
+  const [filter, setFilter] = useState<"all" | "active" | "completed">("all")
 
   const addTodo = (event: FormEvent<HTMLFormElement>) => {
 
@@ -71,7 +71,12 @@ function App() {
 
       <TodoList
         todoList={filteresTodo}
-        toggleTodoCompleted={toggleTodoCompleted}></TodoList>
+        toggleTodoCompleted={toggleTodoCompleted}
+        setFilter={setFilter}
+        filter={filter}
+      >
+
+      </TodoList>
 
     </TodoContainer>
   )
