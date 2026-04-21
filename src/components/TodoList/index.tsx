@@ -7,9 +7,11 @@ import IconCheck from '/images/icon-check.svg';
 export interface TodoListProps {
     todoList: Todo[];
     toggleTodoCompleted: (id: number) => void;
+    setFilter: (filter: "all" | "active" | "completed") => void;
+    filter: "all" | "active" | "completed";
 }
 
-const TodoList = ({ todoList, toggleTodoCompleted }: TodoListProps) => {
+const TodoList = ({ todoList, toggleTodoCompleted, setFilter, filter }: TodoListProps) => {
     const { theme } = useContext(ThemeContext);
     const config = themeConfig[theme].todo;
 
@@ -56,11 +58,20 @@ const TodoList = ({ todoList, toggleTodoCompleted }: TodoListProps) => {
 
                         <div className="hidden sm:flex gap-4">
 
-                            <button className={`cursor-pointer ${theme === "dark" ? "hover:text-light-bg" : "hover:text-dark-bg"} ${config.textColor}`}>All</button>
+                            <button
+                                onClick={() => setFilter("all")}
+                                className={`cursor-pointer ${theme === "dark" ? "hover:text-light-bg" : "hover:text-dark-bg"} ${filter === "all" ? "text-blue" : config.textColor}`}>All
+                            </button>
 
-                            <button className={`cursor-pointer ${theme === "dark" ? "hover:text-light-bg" : "hover:text-dark-bg"} ${config.textColor}`}>Active</button>
+                            <button
+                                onClick={() => setFilter("active")}
+                                className={`cursor-pointer ${theme === "dark" ? "hover:text-light-bg" : "hover:text-dark-bg"} ${filter === "active" ? "text-blue" : config.textColor}`}>Active
+                            </button>
 
-                            <button className={`cursor-pointer ${theme === "dark" ? "hover:text-light-bg" : "hover:text-dark-bg"} ${config.textColor}`}>Completed</button>
+                            <button
+                                onClick={() => setFilter("completed")}
+                                className={`cursor-pointer ${theme === "dark" ? "hover:text-light-bg" : "hover:text-dark-bg"} ${filter === "completed" ? "text-blue" : config.textColor}`}>Completed
+                            </button>
 
                         </div>
 
@@ -78,11 +89,26 @@ const TodoList = ({ todoList, toggleTodoCompleted }: TodoListProps) => {
 
                 <div className={`flex justify-center gap-5 py-4 rounded-md mt-4 ${config.background} border ${config.border} rounded-md sm:hidden`}>
 
-                    <button className={`cursor-pointer ${theme === "dark" ? "hover:text-light-bg" : "hover:text-dark-bg"} ${config.textColor}`}>All</button>
+                    <button
+                        onClick={() => setFilter("all")}
+                        className={`cursor-pointer ${theme === "dark" ? "hover:text-light-bg" : "hover:text-dark-bg"
+                            } ${filter === "all" ? "text-blue" : config.textColor}`}
+                    >All
+                    </button>
 
-                    <button className={`cursor-pointer ${theme === "dark" ? "hover:text-light-bg" : "hover:text-dark-bg"} ${config.textColor}`}>Active</button>
+                    <button
+                        onClick={() => setFilter("active")}
+                        className={`cursor-pointer ${theme === "dark" ? "hover:text-light-bg" : "hover:text-dark-bg"
+                            } ${filter === "active" ? "text-blue" : config.textColor}`}
+                    >Active
+                    </button>
 
-                    <button className={`cursor-pointer ${theme === "dark" ? "hover:text-light-bg" : "hover:text-dark-bg"} ${config.textColor}`}>Completed</button>
+                    <button
+                        onClick={() => setFilter("completed")}
+                        className={`cursor-pointer ${theme === "dark" ? "hover:text-light-bg" : "hover:text-dark-bg"
+                            } ${filter === "completed" ? "text-blue" : config.textColor}`}
+                    >Completed
+                    </button>
 
                 </div>
             )}
