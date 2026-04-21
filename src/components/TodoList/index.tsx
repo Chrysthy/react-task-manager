@@ -29,7 +29,7 @@ const TodoList = ({ todoList, toggleTodoCompleted, setFilter, filter, clearCompl
 
                             <div className="flex items-center gap-4">
 
-                                <span className="w-6 h-6 rounded-full hover:bg-[linear-gradient(to_right,hsl(192,100%,67%),hsl(280,87%,65%))] hover:p-[1px]">
+                                <span className="w-6 h-6 rounded-full hover:bg-[linear-gradient(to_right,hsl(192,100%,67%),hsl(280,87%,65%))] hover:p-px">
 
                                     <button onClick={() => toggleTodoCompleted(todo.id)} className={`w-full h-full border ${config.border} rounded-full cursor-pointer ${config.background} ${todo.completed ? "bg-[linear-gradient(to_right,hsl(192,100%,67%),hsl(280,87%,65%))]" : ""}`}>
 
