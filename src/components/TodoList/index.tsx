@@ -16,8 +16,6 @@ const TodoList = ({ todoList, toggleTodoCompleted, setFilter, filter, clearCompl
     const { theme } = useContext(ThemeContext);
     const config = themeConfig[theme].todo;
 
-    if (todoList.length === 0) return null;
-
     return (
         <>
 
@@ -51,70 +49,68 @@ const TodoList = ({ todoList, toggleTodoCompleted, setFilter, filter, clearCompl
                 </ul>
 
 
-                {todoList.length > 0 && (
 
 
-                    <div className={`text-sm flex items-center justify-between p-6 ${config.textColor} rounded-b-md`}>
-                        <p>{todoList.length} items left</p>
 
-                        <div className="hidden sm:flex gap-4">
+                <div className={`text-sm flex items-center justify-between p-6 ${config.textColor} rounded-b-md`}>
 
-                            <button
-                                onClick={() => setFilter("all")}
-                                className={`cursor-pointer ${theme === "dark" ? "hover:text-light-bg" : "hover:text-dark-bg"} ${filter === "all" ? "text-blue" : config.textColor}`}>All
-                            </button>
 
-                            <button
-                                onClick={() => setFilter("active")}
-                                className={`cursor-pointer ${theme === "dark" ? "hover:text-light-bg" : "hover:text-dark-bg"} ${filter === "active" ? "text-blue" : config.textColor}`}>Active
-                            </button>
+                    <p>{todoList.length} items left</p>
 
-                            <button
-                                onClick={() => setFilter("completed")}
-                                className={`cursor-pointer ${theme === "dark" ? "hover:text-light-bg" : "hover:text-dark-bg"} ${filter === "completed" ? "text-blue" : config.textColor}`}>Completed
-                            </button>
-
-                        </div>
+                    <div className="hidden sm:flex gap-4">
 
                         <button
-                            onClick={clearCompleted}
-                            className={`cursor-pointer ${theme === "dark" ? "hover:text-light-bg" : "hover:text-dark-bg"} ${config.textColor}`}>Clear Selected
+                            onClick={() => setFilter("all")}
+                            className={`cursor-pointer ${theme === "dark" ? "hover:text-light-bg" : "hover:text-dark-bg"} ${filter === "all" ? "text-blue" : config.textColor}`}>All
+                        </button>
+
+                        <button
+                            onClick={() => setFilter("active")}
+                            className={`cursor-pointer ${theme === "dark" ? "hover:text-light-bg" : "hover:text-dark-bg"} ${filter === "active" ? "text-blue" : config.textColor}`}>Active
+                        </button>
+
+                        <button
+                            onClick={() => setFilter("completed")}
+                            className={`cursor-pointer ${theme === "dark" ? "hover:text-light-bg" : "hover:text-dark-bg"} ${filter === "completed" ? "text-blue" : config.textColor}`}>Completed
                         </button>
 
                     </div>
 
-                )}
+                    <button
+                        onClick={clearCompleted}
+                        className={`cursor-pointer ${theme === "dark" ? "hover:text-light-bg" : "hover:text-dark-bg"} ${config.textColor}`}>Clear Selected
+                    </button>
+
+                </div>
 
             </div>
 
 
-            {todoList.length > 0 && (
+            <div className={`flex justify-center gap-5 py-4 rounded-md mt-4 ${config.background} border ${config.border} rounded-md sm:hidden`}>
 
-                <div className={`flex justify-center gap-5 py-4 rounded-md mt-4 ${config.background} border ${config.border} rounded-md sm:hidden`}>
+                <button
+                    onClick={() => setFilter("all")}
+                    className={`cursor-pointer ${theme === "dark" ? "hover:text-light-bg" : "hover:text-dark-bg"
+                        } ${filter === "all" ? "text-blue" : config.textColor}`}
+                >All
+                </button>
 
-                    <button
-                        onClick={() => setFilter("all")}
-                        className={`cursor-pointer ${theme === "dark" ? "hover:text-light-bg" : "hover:text-dark-bg"
-                            } ${filter === "all" ? "text-blue" : config.textColor}`}
-                    >All
-                    </button>
+                <button
+                    onClick={() => setFilter("active")}
+                    className={`cursor-pointer ${theme === "dark" ? "hover:text-light-bg" : "hover:text-dark-bg"
+                        } ${filter === "active" ? "text-blue" : config.textColor}`}
+                >Active
+                </button>
 
-                    <button
-                        onClick={() => setFilter("active")}
-                        className={`cursor-pointer ${theme === "dark" ? "hover:text-light-bg" : "hover:text-dark-bg"
-                            } ${filter === "active" ? "text-blue" : config.textColor}`}
-                    >Active
-                    </button>
+                <button
+                    onClick={() => setFilter("completed")}
+                    className={`cursor-pointer ${theme === "dark" ? "hover:text-light-bg" : "hover:text-dark-bg"
+                        } ${filter === "completed" ? "text-blue" : config.textColor}`}
+                >Completed
+                </button>
 
-                    <button
-                        onClick={() => setFilter("completed")}
-                        className={`cursor-pointer ${theme === "dark" ? "hover:text-light-bg" : "hover:text-dark-bg"
-                            } ${filter === "completed" ? "text-blue" : config.textColor}`}
-                    >Completed
-                    </button>
+            </div>
 
-                </div>
-            )}
         </>
     )
 }
