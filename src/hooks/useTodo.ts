@@ -63,12 +63,17 @@ export const useTodo = () => {
         setTodoList(prev => prev.filter((todo) => !todo.completed));
     }
 
+    function removeTodo(id: number) {
+        setTodoList(prev => prev.filter(todo => todo.id !== id))
+    }
+
     return {
         addTodo,
         toggleTodoCompleted,
         filteredTodo,
         setFilter,
         filter,
-        clearCompleted
+        clearCompleted,
+        removeTodo
     }
 }
