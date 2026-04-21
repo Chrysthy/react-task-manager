@@ -27,6 +27,8 @@ export const useTodo = () => {
         }])
 
         event.currentTarget.reset();
+
+        setFilter("all");
     }
 
     const toggleTodoCompleted = (id: number) => {
