@@ -23,45 +23,53 @@ const TodoList = ({ todoList, toggleTodoCompleted, setFilter, filter, clearCompl
             <div className={`${config.background} border ${config.border} rounded-md`}>
 
                 <ul>
+
                     {todoList.map((todo) => (
 
                         <li className={`border-b ${config.border} p-6`} key={todo.id}>
 
-                            <div className="flex items-center gap-4">
+                            <div className="flex items-center justify-between gap-4">
 
-                                <span className="w-6 h-6 rounded-full hover:bg-[linear-gradient(to_right,hsl(192,100%,67%),hsl(280,87%,65%))] hover:p-px">
+                                <div className="flex items-center gap-4">
 
-                                    <button onClick={() => toggleTodoCompleted(todo.id)} className={`w-full h-full border ${config.border} rounded-full cursor-pointer ${config.background} ${todo.completed ? "bg-[linear-gradient(to_right,hsl(192,100%,67%),hsl(280,87%,65%))]" : ""}`}>
+                                    <span className="w-6 h-6 shrink-0 rounded-full hover:bg-[linear-gradient(to_right,hsl(192,100%,67%),hsl(280,87%,65%))] hover:p-px">
 
-                                        {todo.completed && (
+                                        <button
+                                            
+                                            type="button"
+                                            onClick={() => toggleTodoCompleted(todo.id)}
+                                            className={`w-full h-full border ${config.border} rounded-full cursor-pointer ${config.background} ${todo.completed ? "bg-[linear-gradient(to_right,hsl(192,100%,67%),hsl(280,87%,65%))]" : ""}`}
+                                        >
+                                            {todo.completed && (
+                                                <img src={IconCheck} alt="Check Icon" className="h-2 w-2 m-auto" />
+                                            )}
 
-                                            <img src={IconCheck} alt="Check Icon" className="h-2 w-2 m-auto" />
-                                        )}
+                                        </button>
 
-                                    </button>
+                                    </span>
 
+                                    <p className={`${config.textColor} ${todo.completed ? "line-through opacity-50" : ""}`}>
+                                        {todo.text}
+                                    </p>
 
-                                </span>
-
-                                <p className={`${config.textColor} ${todo.completed ? "line-through opacity-50" : ""}`}>{todo.text}</p>
-
+                                </div>
 
                                 <button
+                                    
                                     type="button"
                                     onClick={() => removeTodo(todo.id)}
-                                    className="ml-110 text-gray-400 cursor-pointer hover:text-blue transition"
+                                    className="shrink-0 text-gray-400 cursor-pointer hover:text-blue transition"
                                 >
-                                    ✕
+                                    X
                                 </button>
 
                             </div>
 
                         </li>
+
                     ))}
+
                 </ul>
-
-
-
 
 
                 <div className={`text-sm flex items-center justify-between p-6 ${config.textColor} rounded-b-md`}>
