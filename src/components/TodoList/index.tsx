@@ -10,9 +10,10 @@ export interface TodoListProps {
     setFilter: (filter: "all" | "active" | "completed") => void;
     filter: "all" | "active" | "completed";
     clearCompleted: () => void;
+    removeTodo: (id: number) => void;
 }
 
-const TodoList = ({ todoList, toggleTodoCompleted, setFilter, filter, clearCompleted }: TodoListProps) => {
+const TodoList = ({ todoList, toggleTodoCompleted, setFilter, filter, clearCompleted, removeTodo }: TodoListProps) => {
     const { theme } = useContext(ThemeContext);
     const config = themeConfig[theme].todo;
 
@@ -39,11 +40,22 @@ const TodoList = ({ todoList, toggleTodoCompleted, setFilter, filter, clearCompl
 
                                     </button>
 
+
                                 </span>
 
                                 <p className={`${config.textColor} ${todo.completed ? "line-through opacity-50" : ""}`}>{todo.text}</p>
 
+
+                                <button
+                                    type="button"
+                                    onClick={() => removeTodo(todo.id)}
+                                    className="ml-110 text-gray-400 cursor-pointer hover:text-blue transition"
+                                >
+                                    ✕
+                                </button>
+
                             </div>
+
                         </li>
                     ))}
                 </ul>
