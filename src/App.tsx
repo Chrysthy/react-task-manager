@@ -52,7 +52,7 @@ function App() {
     setTodoList(newTodoList);
   };
 
-  const filteresTodo = todoList.filter(todo => {
+  const filteredTodo = todoList.filter(todo => {
 
     if (filter === "active") return !todo.completed;
 
@@ -60,6 +60,10 @@ function App() {
 
     return true;
   })
+
+  const clearCompleted = () => {
+    setTodoList(prev => prev.filter((todo) => !todo.completed));
+  }
 
   return (
 
@@ -70,10 +74,11 @@ function App() {
       <TodoForm addTodo={addTodo}></TodoForm>
 
       <TodoList
-        todoList={filteresTodo}
+        todoList={filteredTodo}
         toggleTodoCompleted={toggleTodoCompleted}
         setFilter={setFilter}
         filter={filter}
+        clearCompleted={clearCompleted}
       >
 
       </TodoList>
