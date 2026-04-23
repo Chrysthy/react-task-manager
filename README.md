@@ -16,3 +16,18 @@
 </p>
 
 <br>
+
+## 🌐 Live Demo
+
+<p align="center">
+  <a href="https://react-task-manager-1xxu.onrender.com/">
+    <img src="https://img.shields.io/badge/Live%20Demo-Render-blue?labelColor=black" />
+  </a>
+</p>
+
+<p align="center">
+  <sub>Tip: Use right-click → “Open in new tab”.</sub>
+</p>
+
+
+<br>
