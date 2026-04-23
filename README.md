@@ -33,5 +33,12 @@
   <sub>Tip: Use right-click → “Open in new tab”.</sub>
 </p>
 
+<br>
+
+## 📸 Screenshots
+
+<p align="center">
+  <img alt="Gif do Projeto" width="900" src=".github/gif-do-projeto.gif">
+</p>
 
 <br>
