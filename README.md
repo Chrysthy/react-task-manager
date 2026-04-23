@@ -1,6 +1,10 @@
 <h1 align="center">Task Manager ✔️ </h1>
 
 <p align="center">
+ Task management web application built with React, TypeScript, and Vite. It allows users to create, organize, and track tasks efficiently, focusing on productivity and user experience.
+</p>
+
+<p align="center">
   <img alt="License" src="https://img.shields.io/static/v1?label=license&message=MIT&color=c920c9&labelColor=000000">
 </p>
 
