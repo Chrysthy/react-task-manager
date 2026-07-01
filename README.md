@@ -66,9 +66,5 @@
 
 <br>
 
-
-## 📜 License
-
-- This project is licensed under the [MIT License](https://choosealicense.com/licenses/mit/)
-
-<br>
+## 🌟 Support
+<p> If you like this project, please give it a star ⭐ and share it with others! 😄 </p>
