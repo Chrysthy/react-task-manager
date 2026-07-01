@@ -67,6 +67,60 @@
 
 <br>
 
+## ⚙ How to Run
+
+### 1. Clone the repository
+
+```bash
+git clone <repository-url>
+```
+
+### 2. Navigate to the project directory
+
+```bash
+cd react-task-manager
+```
+
+### 3. Install dependencies
+
+```bash
+npm install
+```
+
+### 4. Start the development server
+
+```bash
+npm run dev
+```
+
+The application will be available at:
+
+```text
+http://localhost:5173
+```
+
+## Available Scripts
+
+### Run the development server
+
+```bash
+npm run dev
+```
+
+### Build for production
+
+```bash
+npm run build
+```
+
+### Preview the production build
+
+```bash
+npm run preview
+```
+
+<br>
+
 ## 📜 License
 
 * This project is licensed under the [MIT License](https://choosealicense.com/licenses/mit/)
