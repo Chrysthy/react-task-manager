@@ -51,9 +51,21 @@
 - Tailwind
 - Git and GitHub
 
-
 <br>
 
+## ✨ Features
+
+- Create new tasks
+- View all registered tasks
+- Mark tasks as completed
+- Delete tasks
+- Switch between Light and Dark themes
+- Save theme preference in local storage
+- Clean and user-friendly interface
+- Built with React
+- Deployed on Render
+
+<br>
 
 ## 📜 License
 
