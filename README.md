@@ -45,11 +45,12 @@
 
 ## 🛠 Technologies
 
-- React
-- TypeScript
-- Vite
-- Tailwind
-- Git and GitHub
+* React 19
+* TypeScript
+* Vite
+* Tailwind CSS 4
+* ESLint
+* Git and GitHub
 
 <br>
 
@@ -69,25 +70,25 @@
 
 ## ⚙ How to Run
 
-### 1. Clone the repository
+### Clone the repository
 
 ```bash
 git clone <repository-url>
 ```
 
-### 2. Navigate to the project directory
+### Navigate to the project folder
 
 ```bash
 cd react-task-manager
 ```
 
-### 3. Install dependencies
+### Install dependencies
 
 ```bash
 npm install
 ```
 
-### 4. Start the development server
+### Run the development server
 
 ```bash
 npm run dev
@@ -101,7 +102,7 @@ http://localhost:5173
 
 ## Available Scripts
 
-### Run the development server
+### Start development server
 
 ```bash
 npm run dev
@@ -113,11 +114,18 @@ npm run dev
 npm run build
 ```
 
-### Preview the production build
+### Preview production build
 
 ```bash
 npm run preview
 ```
+
+### Run ESLint
+
+```bash
+npm run lint
+```
+
 
 <br>
 
